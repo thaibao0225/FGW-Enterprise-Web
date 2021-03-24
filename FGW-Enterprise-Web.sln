@@ -3,7 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.30907.101
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FGW-Enterprise-Web", "FGW-Enterprise-Web\FGW-Enterprise-Web.csproj", "{5096D29E-4913-4F52-9D6C-CEFE397813F7}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FGW-Enterprise-Web", "FGW-Enterprise-Web\FGW-Enterprise-Web.csproj", "{5096D29E-4913-4F52-9D6C-CEFE397813F7}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FGW-Enterprise-Web.Data", "FGW-Enterprise-Web.Data\FGW-Enterprise-Web.Data.csproj", "{77E26F07-6F63-496C-A80E-466997F4D3D6}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +17,10 @@ Global
 		{5096D29E-4913-4F52-9D6C-CEFE397813F7}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{5096D29E-4913-4F52-9D6C-CEFE397813F7}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{5096D29E-4913-4F52-9D6C-CEFE397813F7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{77E26F07-6F63-496C-A80E-466997F4D3D6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{77E26F07-6F63-496C-A80E-466997F4D3D6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{77E26F07-6F63-496C-A80E-466997F4D3D6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{77E26F07-6F63-496C-A80E-466997F4D3D6}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
