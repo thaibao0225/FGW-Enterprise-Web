@@ -1,0 +1,13 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+    <RootNamespace>FGW_Enterprise_Web.ViewModels</RootNamespace>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\FGW-Enterprise-Web.Data\FGW-Enterprise-Web.Data.csproj" />
+    <ProjectReference Include="..\FGW-Enterprise-Web\FGW-Enterprise-Web.csproj" />
+  </ItemGroup>
+
+</Project>

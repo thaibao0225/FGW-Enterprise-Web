@@ -1,0 +1,5 @@
+{
+  "ConnectionStrings": {
+    "AspSchlDB": "Server=DESKTOP-5BDR4TT;Database=AspSch;Trusted_Connection=True"
+  }
+}
