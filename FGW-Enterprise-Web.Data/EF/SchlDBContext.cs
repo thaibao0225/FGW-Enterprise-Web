@@ -36,6 +36,8 @@ namespace FGW_Enterprise_Web.Data.EF
             modelBuilder.ApplyConfiguration(new CommentConfigurations());
             modelBuilder.ApplyConfiguration(new UserFileConfigurations());
             modelBuilder.ApplyConfiguration(new RegisterCommentConfigurations());
+            modelBuilder.ApplyConfiguration(new UserImageConfigurations());
+
 
             modelBuilder.Entity<IdentityUserClaim<Guid>>().ToTable("AppUserClaims");
             modelBuilder.Entity<IdentityUserRole<Guid>>().ToTable("AppUserRoles").HasKey(x=>new {x.UserId,x.RoleId });
@@ -84,7 +86,8 @@ namespace FGW_Enterprise_Web.Data.EF
 
         public DbSet<AppConfig> AppConfig { get; set; }
         public DbSet<User> User { get; set; }
-       
+        public DbSet<UserImage> UserImage { get; set; }
+
         public DbSet<Role> Role { get; set; }
         public DbSet<UserRole> UserRole { get; set; }
         public DbSet<RegisterEvent> RegisterEvent { get; set; }
