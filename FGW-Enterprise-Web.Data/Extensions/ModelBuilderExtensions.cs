@@ -26,29 +26,77 @@ namespace FGW_Enterprise_Web.Data.Extensions
 
             var roleID = new Guid("f49e4348-718f-43e3-b1f6-6dc89c5Bb4fd");
             var adminID = new Guid("360E601E-92F2-4F08-832B-604A21293258");
+            var roleID1 = new Guid("f49e4348-718f-43e3-b1f6-6dc89c5Bb5ff");
 
             modelBuilder.Entity<Role>().HasData(new Role
             {
                 Id = roleID,
-                role_Name = "admin",
-                NormalizedName = "admin",
+                Name = "Admin",
+                NormalizedName = "Admin",
                 role_Descrpition ="Adminstrator role"
+                
+
+            });
+            modelBuilder.Entity<Role>().HasData(new Role
+            {
+                Id = roleID1,
+                Name = "User",
+                NormalizedName = "User",
+                role_Descrpition = "User role"
+
+
             });
 
+
+            modelBuilder.Entity<DeadlineCate>().HasData(new DeadlineCate
+            {   dlCate_Id = "00001",
+                dlCate_Name = "EnterpriseWeb ",
+                dlCate_Description = "Web project",
+                dlCate_CreateBy = "Vo Thi Quynh Nhu",
+                dlCate_CreateDate = DateTime.Now
+
+
+            });
+            modelBuilder.Entity<DeadlineCate>().HasData(new DeadlineCate
+            {
+                dlCate_Id = "00002",
+                dlCate_Name = "Project",
+                dlCate_Description = "Web project",
+                dlCate_CreateBy = "Vo Thi Quynh Nhu",
+                dlCate_CreateDate = DateTime.Now
+
+
+            });
+            modelBuilder.Entity<Deadline>().HasData(new Deadline
+            {
+                dl_Id = "d00001",
+                dl_Name = "Project",
+                dl_Description = "Web project",
+                dl_CreateDate = DateTime.Now,
+
+            });
+            modelBuilder.Entity<Deadline>().HasData(new Deadline
+            {
+                dl_Id = "d00002",
+                dl_Name = "Project2",
+                dl_Description = "Web project2",
+                dl_CreateDate = DateTime.Now,
+
+            });
+          
             var hasher = new PasswordHasher<User>();
             modelBuilder.Entity<User>().HasData(new User
             {
                 Id = adminID,
-                user_Name = "admin",
-                NormalizedUserName = "admin",
-                user_Email = "nhuvtqgcs18612@fpt.edu.vn",
+                UserName = "Admin",
+                NormalizedUserName = "Admin",
                 NormalizedEmail = "nhuvtqgcs18612@fpt.edu.vn",
+                Email = "nhuvtqgcs18612@fpt.edu.vn",
                 EmailConfirmed = true,
-                user_Password = hasher.HashPassword(null, "123456"),
+                PasswordHash = hasher.HashPassword(null, "Ad@123"),
                 SecurityStamp = string.Empty,
-                user_FullName="VoThiQUynhNhu",
+                user_FullName="Vo Thi Quynh Nhu",
                 user_DOB= new DateTime(2021,03,24),
-                user_PhoneNumber="0337779292",
                 
             });
 
