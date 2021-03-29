@@ -1,0 +1,56 @@
+﻿@model FGW_Enterprise_Web.ViewModels.Catalog.Email.GetEmailRequest
+
+@{
+    ViewData["Title"] = "GetMail";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>GetMail</h1>
+
+<h4>GetEmailRequest</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="GetMail">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="_mailnhan" class="control-label"></label>
+                <input asp-for="_mailnhan" class="form-control" />
+                <span asp-validation-for="_mailnhan" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="_mailgui" class="control-label"></label>
+                <input asp-for="_mailgui" class="form-control" />
+                <span asp-validation-for="_mailgui" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="_chude" class="control-label"></label>
+                <input asp-for="_chude" class="form-control" />
+                <span asp-validation-for="_chude" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="_noidung" class="control-label"></label>
+                <input asp-for="_noidung" class="form-control" />
+                <span asp-validation-for="_noidung" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="_smtpacount" class="control-label"></label>
+                <input asp-for="_smtpacount" class="form-control" />
+                <span asp-validation-for="_smtpacount" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="_smtppassword" class="control-label"></label>
+                <input asp-for="_smtppassword" class="form-control" />
+                <span asp-validation-for="_smtppassword" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+

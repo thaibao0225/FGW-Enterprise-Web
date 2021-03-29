@@ -12,13 +12,7 @@ namespace FGW_Enterprise_Web.Data.Configurations
         public void Configure(EntityTypeBuilder<User> builder)
         {
             builder.ToTable("User");
-            builder.Property(x => x.user_Password).IsRequired(true);
-            builder.Property(x => x.user_Name).IsRequired(true);
-            builder.Property(x => x.user_FullName).IsRequired(true);
-            builder.Property(x => x.user_PhoneNumber).IsRequired(true);
-            builder.Property(x => x.user_DOB).IsRequired(true);
-            builder.Property(x => x.user_Email).IsRequired(true);
-            builder.Property(x => x.user_LastLoginDate).IsRequired(true);
+          
 
         }
     }

@@ -15,7 +15,6 @@ namespace FGW_Enterprise_Web.Data.Configurations
             builder.HasKey(x => x.comment_Id);
             builder.HasOne(t => t.UserC).WithMany(ur => ur.CommentU)
                 .HasForeignKey(pc => pc.comment_User);
-
         }
     }
 }
