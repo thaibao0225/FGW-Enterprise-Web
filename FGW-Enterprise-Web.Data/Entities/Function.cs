@@ -11,7 +11,6 @@ namespace FGW_Enterprise_Web.Data.Entities
         public string func_ParentId { get; set; }
 
         public string func_Status { get; set; }
-        public List<Permision> Permision { get; set; }
         public List<Function> FunctionsFun { get; set; }
 
     }
