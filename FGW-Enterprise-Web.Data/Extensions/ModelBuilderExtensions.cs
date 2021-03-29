@@ -30,25 +30,25 @@ namespace FGW_Enterprise_Web.Data.Extensions
             modelBuilder.Entity<Role>().HasData(new Role
             {
                 Id = roleID,
-                role_Name = "admin",
-                NormalizedName = "admin",
+                role_Name = "Admin",
+                NormalizedName = "Admin",
                 role_Descrpition ="Adminstrator role"
+                
+
             });
 
             var hasher = new PasswordHasher<User>();
             modelBuilder.Entity<User>().HasData(new User
             {
                 Id = adminID,
-                user_Name = "admin",
-                NormalizedUserName = "admin",
-                user_Email = "nhuvtqgcs18612@fpt.edu.vn",
+                UserName = "Admin",
+                NormalizedUserName = "Admin",
                 NormalizedEmail = "nhuvtqgcs18612@fpt.edu.vn",
                 EmailConfirmed = true,
-                user_Password = hasher.HashPassword(null, "123456"),
+                PasswordHash = hasher.HashPassword(null, "Ad@123"),
                 SecurityStamp = string.Empty,
-                user_FullName="VoThiQUynhNhu",
+                user_FullName="Vo Thi Quynh Nhu",
                 user_DOB= new DateTime(2021,03,24),
-                user_PhoneNumber="0337779292",
                 
             });
 
