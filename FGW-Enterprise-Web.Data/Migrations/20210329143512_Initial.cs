@@ -3,7 +3,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace FGW_Enterprise_Web.Data.Migrations
 {
-    public partial class AspNetCoreIdentityDatabase : Migration
+    public partial class Initial : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -210,12 +210,10 @@ namespace FGW_Enterprise_Web.Data.Migrations
                     LockoutEnd = table.Column<DateTimeOffset>(nullable: true),
                     LockoutEnabled = table.Column<bool>(nullable: false),
                     AccessFailedCount = table.Column<int>(nullable: false),
-                    user_Name = table.Column<string>(nullable: false),
-                    user_Password = table.Column<string>(nullable: false),
-                    user_FullName = table.Column<string>(nullable: false),
-                    user_PhoneNumber = table.Column<string>(nullable: false),
+                    user_FirstName = table.Column<string>(nullable: true),
+                    user_LastName = table.Column<string>(nullable: true),
+                    user_FullName = table.Column<string>(nullable: true),
                     user_DOB = table.Column<DateTime>(nullable: false),
-                    user_Email = table.Column<string>(nullable: false),
                     user_LastLoginDate = table.Column<DateTime>(nullable: false)
                 },
                 constraints: table =>
@@ -425,17 +423,27 @@ namespace FGW_Enterprise_Web.Data.Migrations
             migrationBuilder.InsertData(
                 table: "AppConfig",
                 columns: new[] { "Key", "Value" },
-                values: new object[] { "HomeTitle", "This is Home Page FWG School" });
+                values: new object[,]
+                {
+                    { "HomeTitle", "This is Home Page FWG School" },
+                    { "HomeKeyword", "This is Keyword Page FWG School" },
+                    { "HomeDescription", "This is description Page FWG School" }
+                });
 
             migrationBuilder.InsertData(
-                table: "AppConfig",
-                columns: new[] { "Key", "Value" },
-                values: new object[] { "HomeKeyword", "This is Keyword Page FWG School" });
+                table: "AppUserRoles",
+                columns: new[] { "UserId", "RoleId" },
+                values: new object[] { new Guid("360e601e-92f2-4f08-832b-604a21293258"), new Guid("f49e4348-718f-43e3-b1f6-6dc89c5bb4fd") });
 
             migrationBuilder.InsertData(
-                table: "AppConfig",
-                columns: new[] { "Key", "Value" },
-                values: new object[] { "HomeDescription", "This is description Page FWG School" });
+                table: "Role",
+                columns: new[] { "Id", "ConcurrencyStamp", "Name", "NormalizedName", "role_Descrpition", "role_Name" },
+                values: new object[] { new Guid("f49e4348-718f-43e3-b1f6-6dc89c5bb4fd"), "63a1bfb2-f072-4868-a215-b7e8bb181281", null, "admin", "Adminstrator role", "admin" });
+
+            migrationBuilder.InsertData(
+                table: "User",
+                columns: new[] { "Id", "AccessFailedCount", "ConcurrencyStamp", "Email", "EmailConfirmed", "LockoutEnabled", "LockoutEnd", "NormalizedEmail", "NormalizedUserName", "PasswordHash", "PhoneNumber", "PhoneNumberConfirmed", "SecurityStamp", "TwoFactorEnabled", "UserName", "user_DOB", "user_FirstName", "user_FullName", "user_LastLoginDate", "user_LastName" },
+                values: new object[] { new Guid("360e601e-92f2-4f08-832b-604a21293258"), 0, "aad2f179-87cb-48ce-a86a-6ea5e648e21c", null, true, false, null, "nhuvtqgcs18612@fpt.edu.vn", "admin", "AQAAAAEAACcQAAAAENaUKIUS61g+zL4Hyg7J44LFByVdJeBV9zaKTRiWsExgLXOwHOrJnFjpVmC+dzzZjQ==", null, false, "", false, "admin", new DateTime(2021, 3, 24, 0, 0, 0, 0, DateTimeKind.Unspecified), null, "VoThiQUynhNhu", new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), null });
 
             migrationBuilder.CreateIndex(
                 name: "IX_Comment_comment_User",

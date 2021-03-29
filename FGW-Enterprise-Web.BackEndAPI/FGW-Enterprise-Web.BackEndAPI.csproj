@@ -10,6 +10,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\FGW-Enterprise-Web.Application\FGW-Enterprise-Web.Application.csproj" />
     <ProjectReference Include="..\FGW-Enterprise-Web.Data\FGW-Enterprise-Web.Data.csproj" />
     <ProjectReference Include="..\FGW-Enterprise-Web.Ultilities\FGW-Enterprise-Web.Ultilities.csproj" />
     <ProjectReference Include="..\FGW-Enterprise-Web.ViewModels\FGW-Enterprise-Web.ViewModels.csproj" />

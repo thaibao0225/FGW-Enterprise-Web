@@ -1,8 +1,11 @@
+using FGW_Enterprise_Web.Application.System.Users;
 using FGW_Enterprise_Web.Data.EF;
+using FGW_Enterprise_Web.Data.Entities;
 using FGW_Enterprise_Web.Ultilities.Constants;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
@@ -29,6 +32,15 @@ namespace FGW_Enterprise_Web.BackEndAPI
         {
             services.AddDbContext<SchlDBContext>(options =>
             options.UseSqlServer(Configuration.GetConnectionString(SystemConstants.MainConnectionString)));
+            services.AddIdentity<User, Role>()
+                .AddEntityFrameworkStores<SchlDBContext>()
+                .AddDefaultTokenProviders();
+            services.AddControllersWithViews();
+            services.AddTransient<UserManager<User>, UserManager<User>>();
+            services.AddTransient<SignInManager<User>, SignInManager<User>>();
+            services.AddTransient<RoleManager<Role>, RoleManager<Role>>();
+            services.AddTransient<IUserService, UserService>();
+
             services.AddControllersWithViews();
 
             services.AddSwaggerGen(c =>

@@ -39,16 +39,14 @@ namespace FGW_Enterprise_Web.Data.Extensions
             modelBuilder.Entity<User>().HasData(new User
             {
                 Id = adminID,
-                user_Name = "admin",
+                UserName = "admin",
                 NormalizedUserName = "admin",
-                user_Email = "nhuvtqgcs18612@fpt.edu.vn",
                 NormalizedEmail = "nhuvtqgcs18612@fpt.edu.vn",
                 EmailConfirmed = true,
-                user_Password = hasher.HashPassword(null, "123456"),
+                PasswordHash = hasher.HashPassword(null, "123456"),
                 SecurityStamp = string.Empty,
                 user_FullName="VoThiQUynhNhu",
                 user_DOB= new DateTime(2021,03,24),
-                user_PhoneNumber="0337779292",
                 
             });
 
