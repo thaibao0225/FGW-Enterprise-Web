@@ -1,4 +1,5 @@
-﻿using FGW_Enterprise_Web.ViewModels.System.Users;
+﻿using FGW_Enterprise_Web.Application.Dtors;
+using FGW_Enterprise_Web.ViewModels.System.Users;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -9,7 +10,8 @@ namespace FGW_Enterprise_Web.Application.System.Users
     public interface IUserService
     {
         Task<string> Authencate(LoginRequest request);
-        Task<string> Register(RegisterRequest request);
+        Task<bool> Register(RegisterRequest request);
+        Task<PagedResult<UserVm>> GetUserPaging(GetUserPagingRequest request);
 
     }
 }
