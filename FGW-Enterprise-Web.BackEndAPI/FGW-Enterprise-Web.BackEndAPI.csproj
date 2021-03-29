@@ -1,4 +1,4 @@
-<Project Sdk="Microsoft.NET.Sdk.Web">
+﻿<Project Sdk="Microsoft.NET.Sdk.Web">
 
   <PropertyGroup>
     <TargetFramework>netcoreapp3.1</TargetFramework>
@@ -6,14 +6,22 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="FluentValidation.AspNetCore" Version="8.6.2" />
+    <PackageReference Include="Microsoft.AspNetCore.Authentication.JwtBearer" Version="3.1.2" />
+    <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="3.1.2" />
     <PackageReference Include="Swashbuckle.AspNetCore" Version="5.0.0" />
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\FGW-Enterprise-Web.Application\FGW-Enterprise-Web.Application.csproj" />
     <ProjectReference Include="..\FGW-Enterprise-Web.Data\FGW-Enterprise-Web.Data.csproj" />
     <ProjectReference Include="..\FGW-Enterprise-Web.Ultilities\FGW-Enterprise-Web.Ultilities.csproj" />
     <ProjectReference Include="..\FGW-Enterprise-Web.ViewModels\FGW-Enterprise-Web.ViewModels.csproj" />
     <ProjectReference Include="..\FGW-Enterprise-Web\FGW-Enterprise-Web.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="wwwroot\user-content\" />
   </ItemGroup>
 
 </Project>
