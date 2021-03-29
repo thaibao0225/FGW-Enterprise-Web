@@ -1,0 +1,79 @@
+﻿@model FGW_Enterprise_Web.ViewModels.System.Users.RegisterRequest
+
+@{
+    ViewData["Title"] = "Create";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+
+
+<h4>RegisterRequest</h4>
+
+
+<div class="container-fluid">
+
+    <h1 class="mt-4">Create new</h1>
+    <ol class="breadcrumb mb-4">
+        <li class="breadcrumb-item"><a asp-action="Index" asp-controller="Home">Home Page</a></li>
+        <li class="breadcrumb-item active">Create new User</li>
+    </ol>
+    <div class="card mb-4">
+        <div class="card-header">
+            <a class="btn btn-success" asp-action="Index" asp-controller="User">Back to list</a>
+        </div>
+
+        <div class="card-body">
+            <div class="col-md-4">
+                <form asp-action="Create">
+                    <div asp-validation-summary="All" class="text-danger"></div>
+                    <div class="form-group">
+                        <label asp-for="user_FirstName" class="control-label"></label>
+                        <input asp-for="user_FirstName" class="form-control" />
+                        <span asp-validation-for="user_FirstName" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="user_LastName" class="control-label"></label>
+                        <input asp-for="user_LastName" class="form-control" />
+                        <span asp-validation-for="user_LastName" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="user_FullName" class="control-label"></label>
+                        <input asp-for="user_FullName" class="form-control" />
+                        <span asp-validation-for="user_FullName" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="user_DOB" class="control-label"></label>
+                        <input asp-for="user_DOB" class="form-control" />
+                        <span asp-validation-for="user_DOB" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="UserName" class="control-label"></label>
+                        <input asp-for="UserName" class="form-control" />
+                        <span asp-validation-for="UserName" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="Email" class="control-label"></label>
+                        <input asp-for="Email" class="form-control" />
+                        <span asp-validation-for="Email" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="Password" class="control-label"></label>
+                        <input asp-for="Password" class="form-control" />
+                        <span asp-validation-for="Password" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="ConfirmPassword" class="control-label"></label>
+                        <input asp-for="ConfirmPassword" class="form-control" />
+                        <span asp-validation-for="ConfirmPassword" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <input type="submit" value="Save" class="btn btn-primary" />
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+    
+
