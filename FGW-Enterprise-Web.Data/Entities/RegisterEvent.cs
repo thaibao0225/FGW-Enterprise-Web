@@ -7,7 +7,7 @@ namespace FGW_Enterprise_Web.Data.Entities
     public class RegisterEvent
     {
         public string resEvent_CourseId { get; set; }
-        public Course Course { get; set; }
+        public Courses Course { get; set; }
 
         public Guid resEvent_UserId { get; set; }
         public User User { get; set; }

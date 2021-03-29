@@ -13,6 +13,7 @@ namespace FGW_Enterprise_Web.Data.Configurations
         {
             builder.ToTable("Deadline");
             builder.HasKey(t => new { t.dl_Id });
+
         }
     }
 }

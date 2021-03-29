@@ -13,7 +13,7 @@ namespace FGW_Enterprise_Web.Data.Configurations
         {
             builder.ToTable("UserFile");
             builder.HasKey(x => x.file_Id);//khoa chinh        }
-            builder.HasOne(t => t.DeadlineF).WithMany(ur => ur.UserFileD)
+            builder.HasOne(t => t.DeadlineInUserFile).WithMany(ur => ur.UserFile)
                 .HasForeignKey(pc => pc.file_DeadlineId);
         }
     }

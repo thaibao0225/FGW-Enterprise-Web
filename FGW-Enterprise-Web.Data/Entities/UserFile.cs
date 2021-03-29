@@ -11,8 +11,11 @@ namespace FGW_Enterprise_Web.Data.Entities
         public string file_Description { get; set; }
         public string file_file { get; set; }
         public string file_url { get; set; }
+        public long file_size { get; set; }
+
         public string file_DeadlineId { get; set; }
-        public Deadline DeadlineF { get; set; }
+        public Deadline DeadlineInUserFile { get; set; }
+        public bool IsDefault { get; set; }
 
         public string file_IsSelected { get; set; }
         public DateTime file_DateUpload { get; set; }
