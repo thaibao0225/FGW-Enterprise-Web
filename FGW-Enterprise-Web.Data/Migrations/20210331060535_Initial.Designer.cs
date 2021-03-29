@@ -10,8 +10,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace FGW_Enterprise_Web.Data.Migrations
 {
     [DbContext(typeof(SchlDBContext))]
-    [Migration("20210324022326_SeedIdentityUser")]
-    partial class SeedIdentityUser
+    [Migration("20210331060535_Initial")]
+    partial class Initial
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -306,10 +306,10 @@ namespace FGW_Enterprise_Web.Data.Migrations
                         new
                         {
                             Id = new Guid("f49e4348-718f-43e3-b1f6-6dc89c5bb4fd"),
-                            ConcurrencyStamp = "3dfbc043-4c5d-4ce0-994c-d7384eed197c",
-                            NormalizedName = "admin",
+                            ConcurrencyStamp = "336c81dc-e827-47bc-891d-9ae0d4206324",
+                            NormalizedName = "Admin",
                             role_Descrpition = "Adminstrator role",
-                            role_Name = "admin"
+                            role_Name = "Admin"
                         });
                 });
 
@@ -364,27 +364,16 @@ namespace FGW_Enterprise_Web.Data.Migrations
                     b.Property<DateTime>("user_DOB")
                         .HasColumnType("datetime2");
 
-                    b.Property<string>("user_Email")
-                        .IsRequired()
+                    b.Property<string>("user_FirstName")
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("user_FullName")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<DateTime>("user_LastLoginDate")
                         .HasColumnType("datetime2");
 
-                    b.Property<string>("user_Name")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("user_Password")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("user_PhoneNumber")
-                        .IsRequired()
+                    b.Property<string>("user_LastName")
                         .HasColumnType("nvarchar(max)");
 
                     b.HasKey("Id");
@@ -396,21 +385,19 @@ namespace FGW_Enterprise_Web.Data.Migrations
                         {
                             Id = new Guid("360e601e-92f2-4f08-832b-604a21293258"),
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "68aa0634-5c36-4035-ab8d-01e8b0a48999",
+                            ConcurrencyStamp = "a612f4f1-6aa5-4ba3-b7d0-60d008d25a3c",
                             EmailConfirmed = true,
                             LockoutEnabled = false,
                             NormalizedEmail = "nhuvtqgcs18612@fpt.edu.vn",
-                            NormalizedUserName = "admin",
+                            NormalizedUserName = "Admin",
+                            PasswordHash = "AQAAAAEAACcQAAAAEK5XRgo9E+EFER/Z6Uo2oIHvJNnVTb7rumNauUdkVcNp4rr/ZfYxZ4CErk6DofsdYA==",
                             PhoneNumberConfirmed = false,
                             SecurityStamp = "",
                             TwoFactorEnabled = false,
+                            UserName = "Admin",
                             user_DOB = new DateTime(2021, 3, 24, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            user_Email = "nhuvtqgcs18612@fpt.edu.vn",
-                            user_FullName = "VoThiQUynhNhu",
-                            user_LastLoginDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            user_Name = "admin",
-                            user_Password = "AQAAAAEAACcQAAAAEHe0/o82Fac82YR54Rr/vXvynbKRmLN0bssHx+fyM46r05OxqlYu+Qmq8zPSfl/Kgg==",
-                            user_PhoneNumber = "0337779292"
+                            user_FullName = "Vo Thi Quynh Nhu",
+                            user_LastLoginDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified)
                         });
                 });
 

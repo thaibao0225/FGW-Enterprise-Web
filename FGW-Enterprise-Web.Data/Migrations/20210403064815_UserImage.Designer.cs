@@ -10,8 +10,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace FGW_Enterprise_Web.Data.Migrations
 {
     [DbContext(typeof(SchlDBContext))]
-    [Migration("20210324015843_AspNetCoreIdentityDatabase")]
-    partial class AspNetCoreIdentityDatabase
+    [Migration("20210403064815_UserImage")]
+    partial class UserImage
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -301,6 +301,16 @@ namespace FGW_Enterprise_Web.Data.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("Role");
+
+                    b.HasData(
+                        new
+                        {
+                            Id = new Guid("f49e4348-718f-43e3-b1f6-6dc89c5bb4fd"),
+                            ConcurrencyStamp = "8a8e7210-ee1d-4e2c-a3be-f10c21558841",
+                            NormalizedName = "Admin",
+                            role_Descrpition = "Adminstrator role",
+                            role_Name = "Admin"
+                        });
                 });
 
             modelBuilder.Entity("FGW_Enterprise_Web.Data.Entities.User", b =>
@@ -354,32 +364,41 @@ namespace FGW_Enterprise_Web.Data.Migrations
                     b.Property<DateTime>("user_DOB")
                         .HasColumnType("datetime2");
 
-                    b.Property<string>("user_Email")
-                        .IsRequired()
+                    b.Property<string>("user_FirstName")
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("user_FullName")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<DateTime>("user_LastLoginDate")
                         .HasColumnType("datetime2");
 
-                    b.Property<string>("user_Name")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("user_Password")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("user_PhoneNumber")
-                        .IsRequired()
+                    b.Property<string>("user_LastName")
                         .HasColumnType("nvarchar(max)");
 
                     b.HasKey("Id");
 
                     b.ToTable("User");
+
+                    b.HasData(
+                        new
+                        {
+                            Id = new Guid("360e601e-92f2-4f08-832b-604a21293258"),
+                            AccessFailedCount = 0,
+                            ConcurrencyStamp = "0d89484f-2ec5-4559-a9a0-03b86f315396",
+                            EmailConfirmed = true,
+                            LockoutEnabled = false,
+                            NormalizedEmail = "nhuvtqgcs18612@fpt.edu.vn",
+                            NormalizedUserName = "Admin",
+                            PasswordHash = "AQAAAAEAACcQAAAAEEZnagQA9MBEstvs2gfcJ9QP+MX1QapWlwgZp5MCEcNsqdwYNqlpniYFwAzF5871NQ==",
+                            PhoneNumberConfirmed = false,
+                            SecurityStamp = "",
+                            TwoFactorEnabled = false,
+                            UserName = "Admin",
+                            user_DOB = new DateTime(2021, 3, 24, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            user_FullName = "Vo Thi Quynh Nhu",
+                            user_LastLoginDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified)
+                        });
                 });
 
             modelBuilder.Entity("FGW_Enterprise_Web.Data.Entities.UserAction", b =>
@@ -433,6 +452,32 @@ namespace FGW_Enterprise_Web.Data.Migrations
                     b.HasIndex("file_DeadlineId");
 
                     b.ToTable("UserFile");
+                });
+
+            modelBuilder.Entity("FGW_Enterprise_Web.Data.Entities.UserImage", b =>
+                {
+                    b.Property<string>("Id")
+                        .HasColumnType("nvarchar(450)");
+
+                    b.Property<DateTime>("DateCreated")
+                        .HasColumnType("datetime2");
+
+                    b.Property<int>("FileSize")
+                        .HasColumnType("int");
+
+                    b.Property<string>("UrlImg")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(200)")
+                        .HasMaxLength(200);
+
+                    b.Property<Guid>("UserId")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("UserId");
+
+                    b.ToTable("UserImage");
                 });
 
             modelBuilder.Entity("FGW_Enterprise_Web.Data.Entities.UserRole", b =>
@@ -523,6 +568,13 @@ namespace FGW_Enterprise_Web.Data.Migrations
                     b.HasKey("UserId", "RoleId");
 
                     b.ToTable("AppUserRoles");
+
+                    b.HasData(
+                        new
+                        {
+                            UserId = new Guid("360e601e-92f2-4f08-832b-604a21293258"),
+                            RoleId = new Guid("f49e4348-718f-43e3-b1f6-6dc89c5bb4fd")
+                        });
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityUserToken<System.Guid>", b =>
@@ -644,6 +696,15 @@ namespace FGW_Enterprise_Web.Data.Migrations
                     b.HasOne("FGW_Enterprise_Web.Data.Entities.Deadline", "DeadlineF")
                         .WithMany("UserFileD")
                         .HasForeignKey("file_DeadlineId");
+                });
+
+            modelBuilder.Entity("FGW_Enterprise_Web.Data.Entities.UserImage", b =>
+                {
+                    b.HasOne("FGW_Enterprise_Web.Data.Entities.User", "UserI")
+                        .WithMany("UserImageU")
+                        .HasForeignKey("UserId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
                 });
 
             modelBuilder.Entity("FGW_Enterprise_Web.Data.Entities.UserRole", b =>
