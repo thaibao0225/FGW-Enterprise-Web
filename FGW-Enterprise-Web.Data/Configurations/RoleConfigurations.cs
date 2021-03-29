@@ -13,7 +13,6 @@ namespace FGW_Enterprise_Web.Data.Configurations
         public void Configure(EntityTypeBuilder<Role> builder)
         {
             builder.ToTable("Role");
-            builder.Property(x => x.role_Name).IsRequired(true);
             builder.Property(x => x.role_Descrpition).IsRequired(true);
         }
 
