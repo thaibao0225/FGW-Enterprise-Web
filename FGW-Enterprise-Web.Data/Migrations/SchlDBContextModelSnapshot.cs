@@ -198,26 +198,6 @@ namespace FGW_Enterprise_Web.Data.Migrations
                     b.ToTable("Function");
                 });
 
-            modelBuilder.Entity("FGW_Enterprise_Web.Data.Entities.Permision", b =>
-                {
-                    b.Property<string>("per_ActionId")
-                        .HasColumnType("nvarchar(450)");
-
-                    b.Property<string>("per_FunctionId")
-                        .HasColumnType("nvarchar(450)");
-
-                    b.Property<Guid>("per_RoleId")
-                        .HasColumnType("uniqueidentifier");
-
-                    b.HasKey("per_ActionId", "per_FunctionId", "per_RoleId");
-
-                    b.HasIndex("per_FunctionId");
-
-                    b.HasIndex("per_RoleId");
-
-                    b.ToTable("Permision");
-                });
-
             modelBuilder.Entity("FGW_Enterprise_Web.Data.Entities.RegisterComment", b =>
                 {
                     b.Property<string>("rescmt_CmtId")
@@ -292,10 +272,6 @@ namespace FGW_Enterprise_Web.Data.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("role_Name")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
                     b.HasKey("Id");
 
                     b.ToTable("Role");
@@ -304,10 +280,18 @@ namespace FGW_Enterprise_Web.Data.Migrations
                         new
                         {
                             Id = new Guid("f49e4348-718f-43e3-b1f6-6dc89c5bb4fd"),
-                            ConcurrencyStamp = "3dfbc043-4c5d-4ce0-994c-d7384eed197c",
-                            NormalizedName = "admin",
-                            role_Descrpition = "Adminstrator role",
-                            role_Name = "admin"
+                            ConcurrencyStamp = "985b5149-2ee6-45b6-9792-514ad24f773c",
+                            Name = "Admin",
+                            NormalizedName = "Admin",
+                            role_Descrpition = "Adminstrator role"
+                        },
+                        new
+                        {
+                            Id = new Guid("f49e4348-718f-43e3-b1f6-6dc89c5bb5ff"),
+                            ConcurrencyStamp = "0116f08a-4c8e-4f4a-8f4c-e928cba2305c",
+                            Name = "User",
+                            NormalizedName = "User",
+                            role_Descrpition = "User role"
                         });
                 });
 
@@ -362,27 +346,16 @@ namespace FGW_Enterprise_Web.Data.Migrations
                     b.Property<DateTime>("user_DOB")
                         .HasColumnType("datetime2");
 
-                    b.Property<string>("user_Email")
-                        .IsRequired()
+                    b.Property<string>("user_FirstName")
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("user_FullName")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<DateTime>("user_LastLoginDate")
                         .HasColumnType("datetime2");
 
-                    b.Property<string>("user_Name")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("user_Password")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("user_PhoneNumber")
-                        .IsRequired()
+                    b.Property<string>("user_LastName")
                         .HasColumnType("nvarchar(max)");
 
                     b.HasKey("Id");
@@ -394,36 +367,21 @@ namespace FGW_Enterprise_Web.Data.Migrations
                         {
                             Id = new Guid("360e601e-92f2-4f08-832b-604a21293258"),
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "68aa0634-5c36-4035-ab8d-01e8b0a48999",
+                            ConcurrencyStamp = "4a52508b-2839-48ec-8b4e-7331b9005bb1",
+                            Email = "nhuvtqgcs18612@fpt.edu.vn",
                             EmailConfirmed = true,
                             LockoutEnabled = false,
                             NormalizedEmail = "nhuvtqgcs18612@fpt.edu.vn",
-                            NormalizedUserName = "admin",
+                            NormalizedUserName = "Admin",
+                            PasswordHash = "AQAAAAEAACcQAAAAEP2YHsEHGTbM/zwUswfvrixMDNEpadI7YWX59EBEd2gI9Dn4QnP3kp7kMcpqiKyJDg==",
                             PhoneNumberConfirmed = false,
                             SecurityStamp = "",
                             TwoFactorEnabled = false,
+                            UserName = "Admin",
                             user_DOB = new DateTime(2021, 3, 24, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            user_Email = "nhuvtqgcs18612@fpt.edu.vn",
-                            user_FullName = "VoThiQUynhNhu",
-                            user_LastLoginDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            user_Name = "admin",
-                            user_Password = "AQAAAAEAACcQAAAAEHe0/o82Fac82YR54Rr/vXvynbKRmLN0bssHx+fyM46r05OxqlYu+Qmq8zPSfl/Kgg==",
-                            user_PhoneNumber = "0337779292"
+                            user_FullName = "Vo Thi Quynh Nhu",
+                            user_LastLoginDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified)
                         });
-                });
-
-            modelBuilder.Entity("FGW_Enterprise_Web.Data.Entities.UserAction", b =>
-                {
-                    b.Property<string>("action_Id")
-                        .HasColumnType("nvarchar(450)");
-
-                    b.Property<string>("action_Name")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.HasKey("action_Id");
-
-                    b.ToTable("UserAction");
                 });
 
             modelBuilder.Entity("FGW_Enterprise_Web.Data.Entities.UserFile", b =>
@@ -465,19 +423,30 @@ namespace FGW_Enterprise_Web.Data.Migrations
                     b.ToTable("UserFile");
                 });
 
-            modelBuilder.Entity("FGW_Enterprise_Web.Data.Entities.UserRole", b =>
+            modelBuilder.Entity("FGW_Enterprise_Web.Data.Entities.UserImage", b =>
                 {
-                    b.Property<Guid>("ur_UserId")
+                    b.Property<string>("Id")
+                        .HasColumnType("nvarchar(450)");
+
+                    b.Property<DateTime>("DateCreated")
+                        .HasColumnType("datetime2");
+
+                    b.Property<int>("FileSize")
+                        .HasColumnType("int");
+
+                    b.Property<string>("UrlImg")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(200)")
+                        .HasMaxLength(200);
+
+                    b.Property<Guid>("UserId")
                         .HasColumnType("uniqueidentifier");
 
-                    b.Property<Guid>("ur_RoleId")
-                        .HasColumnType("uniqueidentifier");
+                    b.HasKey("Id");
 
-                    b.HasKey("ur_UserId", "ur_RoleId");
+                    b.HasIndex("UserId");
 
-                    b.HasIndex("ur_RoleId");
-
-                    b.ToTable("UserRole");
+                    b.ToTable("UserImage");
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRoleClaim<System.Guid>", b =>
@@ -598,27 +567,6 @@ namespace FGW_Enterprise_Web.Data.Migrations
                         .HasForeignKey("Functionfunc_Id");
                 });
 
-            modelBuilder.Entity("FGW_Enterprise_Web.Data.Entities.Permision", b =>
-                {
-                    b.HasOne("FGW_Enterprise_Web.Data.Entities.UserAction", "UserAction")
-                        .WithMany("Permision")
-                        .HasForeignKey("per_ActionId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.HasOne("FGW_Enterprise_Web.Data.Entities.Function", "Function")
-                        .WithMany("Permision")
-                        .HasForeignKey("per_FunctionId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.HasOne("FGW_Enterprise_Web.Data.Entities.Role", "Role")
-                        .WithMany("Permision")
-                        .HasForeignKey("per_RoleId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-                });
-
             modelBuilder.Entity("FGW_Enterprise_Web.Data.Entities.RegisterComment", b =>
                 {
                     b.HasOne("FGW_Enterprise_Web.Data.Entities.Comment", "Comment")
@@ -683,17 +631,11 @@ namespace FGW_Enterprise_Web.Data.Migrations
                         .HasForeignKey("file_DeadlineId");
                 });
 
-            modelBuilder.Entity("FGW_Enterprise_Web.Data.Entities.UserRole", b =>
+            modelBuilder.Entity("FGW_Enterprise_Web.Data.Entities.UserImage", b =>
                 {
-                    b.HasOne("FGW_Enterprise_Web.Data.Entities.Role", "Role")
-                        .WithMany("UserRole")
-                        .HasForeignKey("ur_RoleId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.HasOne("FGW_Enterprise_Web.Data.Entities.User", "User")
-                        .WithMany("UserRole")
-                        .HasForeignKey("ur_UserId")
+                    b.HasOne("FGW_Enterprise_Web.Data.Entities.User", "UserI")
+                        .WithMany("UserImageU")
+                        .HasForeignKey("UserId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
                 });
