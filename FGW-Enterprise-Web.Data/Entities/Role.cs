@@ -9,10 +9,7 @@ namespace FGW_Enterprise_Web.Data.Entities
 {
     public class Role:IdentityRole<Guid>
     {
-        public string role_Name { get; set; }
         public string role_Descrpition { get; set; }
-        public List<UserRole> UserRole { get; set; }
-        public List<Permision> Permision { get; set; }
 
 
     }
