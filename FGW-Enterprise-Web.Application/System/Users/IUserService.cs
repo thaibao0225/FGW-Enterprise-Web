@@ -9,7 +9,7 @@ namespace FGW_Enterprise_Web.Application.System.Users
     public interface IUserService
     {
         Task<string> Authencate(LoginRequest request);
-        Task<string> Register(RegisterRequest request);
+        Task<bool> Register(RegisterRequest request);
 
     }
 }

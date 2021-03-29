@@ -7,13 +7,15 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FGW-Enterprise-Web", "FGW-E
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FGW-Enterprise-Web.Data", "FGW-Enterprise-Web.Data\FGW-Enterprise-Web.Data.csproj", "{77E26F07-6F63-496C-A80E-466997F4D3D6}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FGW-Enterprise-Web.Ultilities", "FGW-Enterprise-Web.Ultilities\FGW-Enterprise-Web.Ultilities.csproj", "{E1A39B18-F210-4E01-958E-D87603BCF04F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FGW-Enterprise-Web.Ultilities", "FGW-Enterprise-Web.Ultilities\FGW-Enterprise-Web.Ultilities.csproj", "{E1A39B18-F210-4E01-958E-D87603BCF04F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FGW-Enterprise-Web.ViewModels", "FGW-Enterprise-Web.ViewModels\FGW-Enterprise-Web.ViewModels.csproj", "{D18ACA78-F6D3-4CFB-A2B0-392A5AC4CA7D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FGW-Enterprise-Web.ViewModels", "FGW-Enterprise-Web.ViewModels\FGW-Enterprise-Web.ViewModels.csproj", "{D18ACA78-F6D3-4CFB-A2B0-392A5AC4CA7D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FGW-Enterprise-Web.BackEndAPI", "FGW-Enterprise-Web.BackEndAPI\FGW-Enterprise-Web.BackEndAPI.csproj", "{C9345E75-FE7C-4954-A272-245BC653ED14}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FGW-Enterprise-Web.BackEndAPI", "FGW-Enterprise-Web.BackEndAPI\FGW-Enterprise-Web.BackEndAPI.csproj", "{C9345E75-FE7C-4954-A272-245BC653ED14}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FGW-Enterprise-Web.Application", "FGW-Enterprise-Web.Application\FGW-Enterprise-Web.Application.csproj", "{D6E7B462-BD27-4405-9267-508901F262A2}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FGW-Enterprise-Web.Application", "FGW-Enterprise-Web.Application\FGW-Enterprise-Web.Application.csproj", "{D6E7B462-BD27-4405-9267-508901F262A2}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FGW-Enterprise-Web.AddminApp", "FGW-Enterprise-Web.AddminApp\FGW-Enterprise-Web.AddminApp.csproj", "{33C43737-9C2C-4DC3-BB96-E0FF693C80CC}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -45,6 +47,10 @@ Global
 		{D6E7B462-BD27-4405-9267-508901F262A2}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D6E7B462-BD27-4405-9267-508901F262A2}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D6E7B462-BD27-4405-9267-508901F262A2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{33C43737-9C2C-4DC3-BB96-E0FF693C80CC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{33C43737-9C2C-4DC3-BB96-E0FF693C80CC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{33C43737-9C2C-4DC3-BB96-E0FF693C80CC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{33C43737-9C2C-4DC3-BB96-E0FF693C80CC}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
